@@ -1,0 +1,100 @@
+.item {
+    background-color: aqua;
+}
+
+.itemRange{
+    background-color: aqua;
+}
+
+.itemRange p::before{
+    content:'';
+}
+
+.imgHolder{
+  position: inherit;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+}
+
+
+@media (min-width: 575.98px) { 
+    .item{
+        background-color: red;
+    }
+}
+
+
+@media (min-width: 768px) { 
+    .item{
+        background-color: green;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .item{
+        background-color: purple;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .item{
+        background-color: blue;
+    }
+}
+
+
+
+/* Media Queries for item ranges*/
+
+@media (max-width: 575.98px) { 
+    .itemRange{
+        background-color: red;
+    }
+    .itemRange p::after{
+        content:'Range: 575.98px';
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .itemRange{
+        background-color: green;
+    }
+    .itemRange p::after{
+        content:'Range: 576px to 767.98px';
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .itemRange{
+        background-color: aqua;
+    }
+    .itemRange p::after{
+        
+        content:'Range: 768px to 991.98px';
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .itemRange{
+        background-color: orange;
+    }
+    .itemRange p::after{
+        content:'Range: 992px to 1199.98px';
+    }
+    
+}
+
+
+@media (min-width: 1200px) { 
+    .itemRange{
+        background-color: yellow;
+    }
+    .itemRange p::after{
+        content:'Range: 1200px';
+    }
+}
