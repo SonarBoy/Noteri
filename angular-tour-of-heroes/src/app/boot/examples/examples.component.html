@@ -57,3 +57,535 @@
       <p class="lead">These are the bootstrap examples for grids that you need to understand.</p>
     </div>
   </div>
+  <div class="conainter">
+      <ol>
+          <li>Containers provide a means to center and horizontally pad your site’s contents. Use .container for a responsive pixel width or .container-fluid for width: 100% across all viewport and device sizes.</li>
+          <li>Rows are wrappers for columns. Each column has horizontal padding (called a gutter) for controlling the space between them. This padding is then counteracted on the rows with negative margins. This way, all the content in your columns is visually aligned down the left side.</li>
+          <li>In a grid layout, content must be placed within columns and only columns may be immediate children of rows.</li>
+          <li>Thanks to flexbox, grid columns without a specified width will automatically layout as equal width columns. For example, four instances of .col-sm will each automatically be 25% wide from the small breakpoint and up. See the auto-layout columns section for more examples.</li>
+          <li>Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three equal-width columns across, you can use .col-4.</li>
+          <li>Column widths are set in percentages, so they’re always fluid and sized relative to their parent element.</li>
+          <li>Columns have horizontal padding to create the gutters between individual columns, however, you can remove the margin from rows and padding from columns with .no-gutters on the .row.</li>
+          <li>To make the grid responsive, there are five grid breakpoints, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.</li>
+          <li>Grid breakpoints are based on minimum width media queries, meaning they apply to that one breakpoint and all those above it (e.g., .col-sm-4 applies to small, medium, large, and extra large devices, but not the first xs breakpoint).</li>
+          <li>You can use predefined grid classes (like .col-4) or Sass mixins for more semantic markup.</li>
+      </ol>
+
+  </div>
+
+  <br>
+  <br>
+
+
+  <div class="container">
+      <h1>Regular Container</h1>
+    <div class="row">
+      <div class="col-sm" style="border: 5px solid red;">
+        One of three columns
+      </div>
+      <div class="col-sm" style="border: 5px solid blue;">
+        One of three columns
+      </div>
+      <div class="col-sm" style="border: 5px solid green;">
+        One of three columns
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="container">
+      <h1>Regular Container XS COL</h1>
+    <div class="row">
+      <div class="col" style="border: 5px solid red;">
+        XS small value set
+      </div>
+      <div class="col" style="border: 5px solid blue;">
+        XS small value set
+      </div>
+      <div class="col" style="border: 5px solid green;">
+        XS small value set
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Regular Container SM COL</h1>
+  <div class="row">
+    <div class="col-sm" style="border: 5px solid red;">
+      SM small value set
+    </div>
+    <div class="col-sm" style="border: 5px solid blue;">
+      SM small value set
+    </div>
+    <div class="col-sm" style="border: 5px solid green;">
+      SM small value set
+    </div>
+  </div>
+ </div>
+
+ <div class="container">
+    <h1>Regular Container MD COL</h1>
+  <div class="row">
+    <div class="col-md" style="border: 5px solid red;">
+    MD small value set
+    </div>
+    <div class="col-md" style="border: 5px solid blue;">
+    MD small value set
+    </div>
+    <div class="col-md" style="border: 5px solid green;">
+    MD small value set
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <h1>Regular Container LG COL</h1>
+  <div class="row">
+    <div class="col-lg" style="border: 5px solid red;">
+    LG small value set
+    </div>
+    <div class="col-lg" style="border: 5px solid blue;">
+    LG small value set
+    </div>
+    <div class="col-lg" style="border: 5px solid green;">
+    LG small value set
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <h1>Regular Container XL COL</h1>
+  <div class="row">
+    <div class="col-xl" style="border: 5px solid red;">
+    LG small value set
+    </div>
+    <div class="col-xl" style="border: 5px solid blue;">
+    LG small value set
+    </div>
+    <div class="col-xl" style="border: 5px solid green;">
+    LG small value set
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <h1>Regular Container Hard set column width XS</h1>
+    <div class="row">
+      <div class="col" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-6" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-5" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Regular Container Hard set column width SM</h1>
+    <div class="row">
+      <div class="col-sm" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-sm-6" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-sm" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-sm-5" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-sm" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Regular Container Hard set column width MD</h1>
+    <div class="row">
+      <div class="col-md" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-md-6" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-md" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-md-5" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-md" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Regular Container Hard set column width LG</h1>
+    <div class="row">
+      <div class="col-lg" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-lg-6" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-lg" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-lg-5" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-lg" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Regular Container Hard set column width XL</h1>
+    <div class="row">
+      <div class="col-xl" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-xl-6" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-xl" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-xl-5" style="border: 5px solid blue;">
+        2 of 3 (wider)
+      </div>
+      <div class="col-xl" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h1>Variable Width Content</h1>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-2 col-md-5" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-md-auto" style="border: 5px solid blue;">
+        Variable width content
+      </div>
+      <div class="col col-lg-2" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="border: 5px solid red;">
+        1 of 3
+      </div>
+      <div class="col-md-auto" style="border: 5px solid blue;">
+        Variable width content
+      </div>
+      <div class="col col-lg-2" style="border: 5px solid green;">
+        3 of 3
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col" style="border: 5px solid red;">
+        One of three columns
+      </div>
+      <div class="col" style="border: 5px solid red;">
+        One of three columns
+      </div>
+      <div class="col" style="border: 5px solid red;">
+        One of three columns
+      </div>
+     
+    </div>
+    <div class="row align-items-center">
+      <div class="col" style="border: 5px solid blue;">
+        One of three columns
+      </div>
+      <div class="col" style="border: 5px solid blue;">
+        One of three columns
+      </div>
+      <div class="col" style="border: 5px solid blue;">
+        One of three columns
+      </div>
+    </div>
+    <div class="row align-items-end">
+      <div class="col" style="border: 5px solid green;">
+        One of three columns
+      </div>
+      <div class="col" style="border: 5px solid green;">
+        One of three columns
+      </div>
+      <div class="col" style="border: 5px solid green;">
+        One of three columns
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">ALL THE BOOTSTAP IN ONE PLACE.</h1>
+      <p class="lead">These are the bootstrap examples that you need to understand.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Variable Ordering Content</h1>
+    <p>Note that the presedence is taken to the screen size</p>
+    <p>you will see the order change based on the screen size.</p>
+    <div class="row">
+      <div class="col-2 order-1 order-sm-6 order-md-5" style="border: 5px solid red;">
+        First
+      </div>
+      <div class="col-2 order-2 order-sm-5 order-md-6" style="border: 5px solid blue;">
+        Second
+      </div>
+      <div class="col-2 order-3 order-sm-4 order-md-3" style="border: 5px solid green;">
+        Third
+      </div>
+      <div class="col-2 order-4 order-sm-3 order-md-4" style="border: 5px solid orange;">
+        Fourth
+      </div>
+      <div class="col-2 order-5 order-sm-2 order-md-1" style="border: 5px solid tan;">
+        Fifth
+      </div>
+      <div class="col-2 order-6 order-sm-1 order-md-2" style="border: 5px solid yellow;">
+        Sixth
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="media">
+    <img class="mr-1 testerImage" src="assets/GitHub-Mark.png" alt="Generic placeholder image" style="border: 5px solid red; ">
+    <div class="media-body">
+      <h5 class="mt-0">Media heading</h5>
+      The media object helps build complex and repetitive components where some media is positioned along
+      side content that doesnt wrap around said media. Plus it does this with only two required classes
+      thanks to flexbox.
+
+      The wrapping .media 
+      and .media-body around your content Optional padding and
+      margin can be controlled through spacing utilities.
+    </div>
+  </div>
+
+  <div class="container">
+  <div class="media">
+    <img class="mr-1 testerImage" src="assets/GitHub-Mark.png" alt="Generic placeholder image" style="border: 5px solid red; ">
+    <div class="media-body">
+      <h5 class="mt-0">Media heading</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </div>
+</div>
+<br>
+  <br>
+  <br>
+  <br>
+
+
+
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li class="media my-4">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+  <li class="media">
+    <img src="..." class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">List-based media object</h5>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </li>
+</ul>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">BOOTSTAP SPACING OPTIONS IN ONE PLACE.</h1>
+      <p class="lead">These are the bootstrap examples that you need to understand.</p>
+    </div>
+  </div>
+
+
+
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">IMAGES BOOTSTAP IN ONE PLACE.</h1>
+    <p class="lead">These are the bootstrap examples that you need to understand.</p>
+  </div>
+</div>
+
+<br>
+  <br>
+  <br>
+  <br>
+
+<div class="container">
+<h1>This is a test of the first image</h1>
+<img src="assets/GitHub-Mark.png" class="img-fluid" alt="Responsive image">
+</div>
+
+<br>
+  <br>
+  <br>
+  <br>
+
+
+<div class="container">
+  <h1>Image fluid container used with container parent</h1>
+  <img src="assets/LakeFront.jpg" class="img-fluid" alt="Responsive image">
+  </div>
+
+  <div class="container">
+    <h1>Image thumbnail class used here.</h1>
+    <img src="assets/GitHub-Mark.png" class="img-thumbnail" alt="Responsive image">
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+<br>
+<br>
+<br>
+<br>
+
+<br>
+  <br>
+  <br>
+  <br>
+  
+<br>
+<br>
+<br>
+<br>
+
+    <div class="col-xs-12 col-md-8 container" >
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="cardItem">
+
+
+          <div class="col-auto d-none d-lg-block">
+              <img class="bd-placeholder-img"  src="assets/fifth.jpg" height="250" width="200">
+
+          </div>
+
+         <div class="col p-4 d-flex flex-column position-static">
+          <h2 class="mb-0">The Fifth Glorious Mysteries</h2>
+          <h3 class="mb-0"><strong class="d-inline-block mb-2 text-primary pannel-heading">The Assumption of the Blessed Virgin Mary</strong></h3>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto"><strong>One Our Father, Ten Hail Marys, One Glory Be</strong></p>
+          <h4 class="mb-0">For eternal salvation.</h4>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+    <div class="container" >
+      <h2 class="mb-0">The Fifth Glorious Mysteries</h2>
+      <div class="row" id="">
+
+        
+          <div class="col-12 col-sm-12 col-md-4 col-lg-3 order-1 cardImage">
+              <img class="img-thumbnail"  src="assets/fifth.jpg" height="100%" width="100%">
+
+          </div>
+
+         <div class="col-12 col-sm-12 col-md-8 col-lg-9 order-2 cardText">
+          <h2 class="mb-0">The Fifth Glorious Mysteries</h2>
+          <h3 class="mb-0"><strong class="">The Assumption of the Blessed Virgin Mary</strong></h3>
+
+          <div class="mb-1 text-muted"></div>
+
+
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto"><strong>One Our Father, Ten Hail Marys, One Glory Be</strong></p>
+          <h4 class="mb-0">For eternal salvation.</h4>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    
