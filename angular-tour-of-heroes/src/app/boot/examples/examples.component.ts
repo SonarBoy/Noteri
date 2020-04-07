@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { createWorker } from 'tesseract.js';
 @Component({
   selector: 'app-examples',
   templateUrl: './examples.component.html',

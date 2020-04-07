@@ -5,6 +5,7 @@ import {HerosComponent} from './heros/heros.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import { ExamplesComponent } from './boot/examples/examples.component';
+import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.component';
 
 
 const routes: Routes = [

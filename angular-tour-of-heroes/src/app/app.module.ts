@@ -17,6 +17,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ExamplesComponent } from './boot/examples/examples.component';
+import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.component';
 
 
 
@@ -29,7 +30,8 @@ import { ExamplesComponent } from './boot/examples/examples.component';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    ExamplesComponent
+    ExamplesComponent,
+    TesseractTestComponent
   ],
   imports: [
     BrowserModule,
