@@ -6,6 +6,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import { ExamplesComponent } from './boot/examples/examples.component';
 import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.component';
+import { AngularExamplesComponent } from './angular-examples/angular-examples.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'detail/:id', component: HeroDetailComponent },
   {path: 'examples', component: ExamplesComponent},
-  {path: '', redirectTo: '/dashboard',pathMatch: 'full'}
+  {path: '', redirectTo: '/dashboard',pathMatch: 'full'},
+  {path: 'tesseract', component: TesseractTestComponent},
+  {path: 'angularExamples', component: AngularExamplesComponent}
 ];
 
 

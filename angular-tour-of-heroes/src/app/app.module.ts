@@ -18,6 +18,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ExamplesComponent } from './boot/examples/examples.component';
 import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.component';
+import { AngularExamplesComponent } from './angular-examples/angular-examples.component';
 
 
 
@@ -31,7 +32,8 @@ import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.com
     DashboardComponent,
     HeroSearchComponent,
     ExamplesComponent,
-    TesseractTestComponent
+    TesseractTestComponent,
+    AngularExamplesComponent
   ],
   imports: [
     BrowserModule,

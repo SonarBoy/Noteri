@@ -1,0 +1,104 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+      <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+  </div>
+
+
+  <div class="container" style="border: 1px solid black;">
+    <h1 class="jumbotron jumbotron-fluid" ><strong>Interpolation</strong></h1>
+    <p>-refers to embedding expressions into marked up text.</p>
+    <p>-by default, interpolation uses as its delimiter the double curly braces.</p>
+    <p>-The Value: {{interpolatedValue}}</p>
+
+    <br>
+    <br>
+    <br>
+
+    <p> More generally, the text between the braces is a template expression
+        that Angular first evaluates and then converts to a string. The following
+        interpolation illustrates the point by adding two numbers:
+
+        <br>
+        <br>
+
+        <strong>The sum of 1 + 1 is {{1 + 1}}.</strong>
+    </p>
+
+    <p>
+        The expression can invoke methods of the host component such as getVal()
+        in the following example: 
+
+        <br>
+        <br>
+
+        <strong>The sum of 1 + 1 is not {{1 + 1 + getVal()}}</strong>
+    </p>
+
+    <p>
+        - Angular evaluates all expressions in double curly braces, converts the expression
+        results to strings, and links them with neighboring literal strings. Finally, it assigns
+        the composite interpolated result to an element or directive property.
+    </p>
+
+    <div style=" border: 2px solid ">
+        <img src="{{backgroundImage}}">
+
+
+        <p></p>
+    </div>
+
+    <h1>Template expressions.</h1>
+
+
+
+    <p>A template expression produces a value and appears within the double curly braces,.
+       Angular executes the expression and assigns it to a property of a binding target; the target
+       could be an HTML element, a componenet, or a directive. 
+
+       In the property binding, a template expression appears in quotes to the right of the = symbol
+       as in [property] ="expression" 
+    </p>
+
+    <p>
+        You can't use JavaScript expressions that have or promote side effects, including:
+    </p>
+        <ul>
+            <li>Assingments =,+=,-=,... </li>
+            <li>Operators suchs as new typeof instanceof etc.</li>
+            <li>Chaining expressions with ; or,</li>
+            <li>The increment and decrement operators ++ and --</li>
+            <li>Some of the ES2015+ operators</li>
+        </ul>
+    
+
+    <h1>Expression context</h1>
+
+    <p>The expression context is typically the componenet instance. In the following 
+        snippets, the recomended within double curly braces and the 
+    </p>        
+
+        <h4>{{recommended}}</h4>
+        <img [src]="itemImageUrl2">
+    
+
+    <h4>Simplicity</h4>
+    <p>Altho its possible to write comple template expressions, its better to avoid it
+
+        A property name or method call should be the norm, but an occasional Boolean negation, !, is 
+        OK. Otherwise confine applicaton and business logic to the component, whereitis easier to develop and test.
+    </p>
+
+    <h4>No visible side effects</h4>
+    <p>A template expression should not change any application state other than the value of the target
+        property.
+
+        This rule is essential to Angular's "unidirectional data flow" policy. You should never worry that reading 
+        a component value might change some other displayed value. The view should be stable throughout a single
+        rendering pass. 
+    </p>
+
+
+
+  </div>

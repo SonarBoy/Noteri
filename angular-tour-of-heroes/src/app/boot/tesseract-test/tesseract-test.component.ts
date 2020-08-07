@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { createWorker } from 'tesseract.js';
-import { ThrowStmt } from '@angular/compiler';
-
 
 // DAN CARLIN 28 Prophets of Doom.
 @Component({
@@ -19,6 +17,8 @@ export class TesseractTestComponent implements OnInit {
   }
 
   ngOnInit() {
+
+   
   }
 
   async doOCR(){
@@ -35,6 +35,7 @@ export class TesseractTestComponent implements OnInit {
     console.log(text);
     this.ocrResult = text;
     await worker.terminate();
+    
   }
 
 }
