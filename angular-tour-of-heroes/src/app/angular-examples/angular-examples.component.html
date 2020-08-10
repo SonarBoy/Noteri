@@ -1,6 +1,7 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+      <h1 class="display-4">TEMPLATE SYNTAX.</h1>
       <p class="lead">These are the angular examples that you need to understand.</p>
     </div>
   </div>
@@ -100,5 +101,147 @@
     </p>
 
 
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="container" style="border: 1px solid black;">
+    <h1 class="jumbotron jumbotron-fluid" ><strong>Template Statements</strong></h1>
+
+    <p>- A template statement responds to an event raised by a binding target such as 
+    an element, component, or directive.</p>
+    <br>
+
+    <button (click)="breakOut()">Tester</button>
+
+    <p>Responding to events is the other side of Angular's "unidirectional data flow".
+    You're free to change anything, anywhere, during this turn of the event loop.
+    </p>
+    <br>
+
+
+
+    <h4>Statement Context</h4>
+    <br>
+
+    <p>- As with expressions, statements can refer only to what's in the statment 
+    context such as an event handling method of the component instance. 
+    </p>
+    <br>
+
+    <p>- The statement context amy also refer to properties of the template's own 
+    context. In the following examples, the template $event object, a template input variable
+    (let hero), and a template reference variable (#heroForm) are passed to an event handling
+    method of the component. <br>
+
+    <br>
+    button (click)="onSave($event)">Save /button> <br>
+    button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}} /button> <br>
+    form #heroForm (ngSubmit)="onSubmit(heroForm)"> ... /form> <br>
+
+    <br>
+    -Template context names take precedence over component context names. In deleteHero(hero)
+    above, the hero is the template input variable, not the component's hero property.
+    </p>
+
+  <div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="container" style="border: 1px solid black;">
+    <h1 class="jumbotron jumbotron-fluid" ><strong>Binding Syntax</strong></h1>
+
+    <p>-Data-Binding is a mechanism for coordinating what users see, specifically
+        with application data values. While you could push values to and pull values
+        from HTML, the application is easier to write, read and maintain if you turn These
+        tasks over to a binding framework. You simply declare bindings between binding 
+        sources, target HTML elements, and let the framework do the rest. 
+
+     
+    </p>
+
+    <table>
+        <tr>
+            <td>Type</td>
+            <td>Syntax</td>
+            <td>Category</td>
+        </tr>
+        <tr>
+            <td>Interpolation <br>
+                Property <br>
+                Attribute <br>
+                Class <br>
+                Style <br>
+            </td>
+            <td> CB expression CB <br>
+                [target]="expression" <br>
+                bind-target="expression"
+            </td>
+            <td>One-way <br>
+            from data <br>
+            source to view</td>
+        </tr>
+        <tr>
+            <td>Event</td>
+            <td>(target)="statement" <br>
+            on-target="statement"</td>
+            <td>One-way <br>
+            from view target <br>
+            to data source.</td>
+        </tr>
+        <tr>
+            <td>Two-way</td>
+            <td>[(target)]="expression" <br>
+            bindon-target="expression"</td>
+            <td>Two-way</td>
+        </tr>
+    </table>
+
+    <p>
+        Binding types other than interpolation have a target name to the left of
+        the equal sign, either surrounded by punctuation, [] or (), or preceded by a 
+        prefix: bind-, on-, bindon-,<br>
+
+        <strong>The target of a binding is the property or event inside the binding <br>
+            punctuation: [],() or [()] </strong>
+    </p>
+    <br>
+    <br>
+
+    <h4>Data-binding and HTML</h4>
+    <p>
+        - With data-binding, you can control things like the state of a button:
+        button [disabled]="isUnchanged" Save /button <br>
+
+        <br>
+        <br>
+        
+        -Notice that the binding is to the disabled property of the button's DOM element, <br>
+        not the attribute. This applies to data-binding in general. Data-binding works with <br>
+        properties of DOM elements, componenets and directives, not HTML attributes.<br>
+    </p>
+
+    <br>
+    <br>
+
+    <h3>HTML attribute vs. DOM property.</h3>
+    <p>- The distinction between an HTML attribute and a DOM property is key to understanding <br>
+        how Angular binding works. <br>
+
+        <strong>- Attributes are defined by HTML. Properties are accessed from DOM nodes.</strong>
+
+    
+    </p>
+
+    <ul>
+        <li>A few HTML attributes have 1:1 mapping to properties; for example, id.</li>
+        <li>Some HTML attributes dont have corresponding properties; for example, aria-*.</li>
+        <li>Some DOM properties don't have corresponding attributes; for example, textContent.</li>
+    </ul>
 
   </div>

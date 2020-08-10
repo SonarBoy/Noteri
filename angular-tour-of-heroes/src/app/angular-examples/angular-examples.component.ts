@@ -27,4 +27,8 @@ export class AngularExamplesComponent implements OnInit {
     return 54;
   }
 
+  public breakOut(){
+    alert("Break Out!");
+  }
+
 }
