@@ -233,8 +233,8 @@
     <p>- The distinction between an HTML attribute and a DOM property is key to understanding <br>
         how Angular binding works. <br>
 
-        <strong>- Attributes are defined by HTML. Properties are accessed from DOM nodes.</strong>
-
+        <strong>- Attributes are defined by HTML. Properties are accessed from DOM nodes.</strong> <br>
+        <strong>- Properties are accessed from DOM (Document Object Model) nodes. </strong>
     
     </p>
 
@@ -244,4 +244,112 @@
         <li>Some DOM properties don't have corresponding attributes; for example, textContent.</li>
     </ul>
 
+        <strong><h3>Template binding works with properties and events not attributes.</h3></strong>
+
+
+    <h2>Example 1: an input></h2>
+
+    <p>When the browser renders <input #htmlExample type="text" value="Sarah"> <br>
+       It creates a corresponding DOM node with a value property initialized to "Sarah"   
+    </p>
+
+    <strong>The HTML attribute value specifies the initial value; the DOM value property is the current value.</strong>
+    <br>
+    <br>
+
+    <button (click)="getHTMLAttributeValue()">Attribute</button><br>
+    <button (click)="getDOMPropertyValue()">DOM Property</button><br>
+    <br>
+    <p>When the user enters "Sally" into the input, the DOM value becomes "Sally"</p>
+
+    <br>
+    <br>
+
+    <h2>Example 2: a disabled button</h2>
+    
+    <p>The disabled attribute is another example. A button's disabled property is 
+        false by default so the button is enabled.
+    </p>
+    
+    <br>
+
+    <p>When you add the disabled attribute, its presence alone initializes the button's
+       disabled property to true so the button is disabled.
+    </p>
+
+    <br>
+
+    <p>Adding and removing the disabled attribute disables and enables the button.
+        However, the value of the attribute is irrelevant, which is why you cannot enable a 
+        button by writing  button disabled = "false" Still disabled /button
+    </p>
+
+
+    <strong>
+    The target of a data-binding is something in the DOM. Depending on the binding 
+    type, the target can be a property (element, component, or directive), an event 
+    (element, component, or directive), or sometimes an attribute name. The following 
+    table summarizes the targets for the different binding types.
+    </strong>
+
+    <br>
+    <br>
+    <br>
+
+    <table class="table table-dark">
+        <tr>
+            <th>TYPE</th>
+            <th>TARGET</th>
+            <th>EXAMPLES</th>
+        </tr>
+
+        <tr>
+            <td>Property</td>
+            <td>Element property <br> 
+                Componenet property <br>
+                Directive property</td>
+            <td>src, hero and ngClass in the following: <br>
+                <img src="assets/PropertyBinding.png">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Event</td>
+            <td>Element event <br>
+                Component event<br>
+                Directive event</td>
+            <td>click deleteRequest, and myClick in the following: <br>
+            <img src="assets/EventBinding.png"></td>
+        </tr>
+
+        <tr>
+            <td>Two-way</td>
+            <td>Event and property</td>
+            <td><img src="assets/Two-Way.png"></td>
+        </tr>
+
+        <tr>
+            <td>Attribute</td>
+            <td>Attrubute (the exception)</td>
+            <td><img src="assets/AttributeBinding.png"></td>
+        </tr>
+
+        <tr>
+            <td>Class</td>
+            <td>class property</td>
+            <td><img src="assets/ClassBinding.png"></td>
+        </tr>
+
+        <tr>
+            <td>Style</td>
+            <td>style property</td>
+            <td><img src="assets/StyleBinding.png"></td>
+        </tr>
+
+    </table>
+    
+    
+    <div class="container" style="border: 1px solid black;">
+        <h1 class="jumbotron jumbotron-fluid" ><strong>Property Binding</strong></h1>
+    </div>
   </div>
