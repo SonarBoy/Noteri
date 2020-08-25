@@ -1,14 +1,14 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
-      <h1 class="display-4">TEMPLATE SYNTAX.</h1>
-      <p class="lead">These are the angular examples that you need to understand.</p>
+        <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+        <h1 class="display-4">TEMPLATE SYNTAX.</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
     </div>
-  </div>
+</div>
 
 
-  <div class="container" style="border: 1px solid black;">
-    <h1 class="jumbotron jumbotron-fluid" ><strong>Interpolation</strong></h1>
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Interpolation</strong></h1>
     <p>-refers to embedding expressions into marked up text.</p>
     <p>-by default, interpolation uses as its delimiter the double curly braces.</p>
     <p>-The Value: {{interpolatedValue}}</p>
@@ -29,7 +29,7 @@
 
     <p>
         The expression can invoke methods of the host component such as getVal()
-        in the following example: 
+        in the following example:
 
         <br>
         <br>
@@ -55,39 +55,39 @@
 
 
     <p>A template expression produces a value and appears within the double curly braces,.
-       Angular executes the expression and assigns it to a property of a binding target; the target
-       could be an HTML element, a componenet, or a directive. 
+        Angular executes the expression and assigns it to a property of a binding target; the target
+        could be an HTML element, a componenet, or a directive.
 
-       In the property binding, a template expression appears in quotes to the right of the = symbol
-       as in [property] ="expression" 
+        In the property binding, a template expression appears in quotes to the right of the = symbol
+        as in [property] ="expression"
     </p>
 
     <p>
         You can't use JavaScript expressions that have or promote side effects, including:
     </p>
-        <ul>
-            <li>Assingments =,+=,-=,... </li>
-            <li>Operators suchs as new typeof instanceof etc.</li>
-            <li>Chaining expressions with ; or,</li>
-            <li>The increment and decrement operators ++ and --</li>
-            <li>Some of the ES2015+ operators</li>
-        </ul>
-    
+    <ul>
+        <li>Assingments =,+=,-=,... </li>
+        <li>Operators suchs as new typeof instanceof etc.</li>
+        <li>Chaining expressions with ; or,</li>
+        <li>The increment and decrement operators ++ and --</li>
+        <li>Some of the ES2015+ operators</li>
+    </ul>
+
 
     <h1>Expression context</h1>
 
-    <p>The expression context is typically the componenet instance. In the following 
-        snippets, the recomended within double curly braces and the 
-    </p>        
+    <p>The expression context is typically the componenet instance. In the following
+        snippets, the recomended within double curly braces and the
+    </p>
 
-        <h4>{{recommended}}</h4>
-        <img [src]="itemImageUrl2">
-    
+    <h4>{{recommended}}</h4>
+    <img [src]="itemImageUrl2">
+
 
     <h4>Simplicity</h4>
     <p>Altho its possible to write comple template expressions, its better to avoid it
 
-        A property name or method call should be the norm, but an occasional Boolean negation, !, is 
+        A property name or method call should be the norm, but an occasional Boolean negation, !, is
         OK. Otherwise confine applicaton and business logic to the component, whereitis easier to develop and test.
     </p>
 
@@ -95,30 +95,30 @@
     <p>A template expression should not change any application state other than the value of the target
         property.
 
-        This rule is essential to Angular's "unidirectional data flow" policy. You should never worry that reading 
+        This rule is essential to Angular's "unidirectional data flow" policy. You should never worry that reading
         a component value might change some other displayed value. The view should be stable throughout a single
-        rendering pass. 
+        rendering pass.
     </p>
 
 
 
-  </div>
+</div>
 
-  <br>
-  <br>
-  <br>
+<br>
+<br>
+<br>
 
-  <div class="container" style="border: 1px solid black;">
-    <h1 class="jumbotron jumbotron-fluid" ><strong>Template Statements</strong></h1>
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Template Statements</strong></h1>
 
-    <p>- A template statement responds to an event raised by a binding target such as 
-    an element, component, or directive.</p>
+    <p>- A template statement responds to an event raised by a binding target such as
+        an element, component, or directive.</p>
     <br>
 
     <button (click)="breakOut()">Tester</button>
 
     <p>Responding to events is the other side of Angular's "unidirectional data flow".
-    You're free to change anything, anywhere, during this turn of the event loop.
+        You're free to change anything, anywhere, during this turn of the event loop.
     </p>
     <br>
 
@@ -127,45 +127,48 @@
     <h4>Statement Context</h4>
     <br>
 
-    <p>- As with expressions, statements can refer only to what's in the statment 
-    context such as an event handling method of the component instance. 
+    <p>- As with expressions, statements can refer only to what's in the statment
+        context such as an event handling method of the component instance.
     </p>
     <br>
 
-    <p>- The statement context amy also refer to properties of the template's own 
-    context. In the following examples, the template $event object, a template input variable
-    (let hero), and a template reference variable (#heroForm) are passed to an event handling
-    method of the component. <br>
+    <p>- The statement context amy also refer to properties of the template's own
+        context. In the following examples, the template $event object, a template input variable
+        (let hero), and a template reference variable (#heroForm) are passed to an event handling
+        method of the component. <br>
 
-    <br>
-    button (click)="onSave($event)">Save /button> <br>
-    button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}} /button> <br>
-    form #heroForm (ngSubmit)="onSubmit(heroForm)"> ... /form> <br>
+        <br>
+        button (click)="onSave($event)">Save /button> <br>
+        button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}} /button> <br>
+        form #heroForm (ngSubmit)="onSubmit(heroForm)"> ... /form> <br>
 
-    <br>
-    -Template context names take precedence over component context names. In deleteHero(hero)
-    above, the hero is the template input variable, not the component's hero property.
+        <br>
+        -Template context names take precedence over component context names. In deleteHero(hero)
+        above, the hero is the template input variable, not the component's hero property.
     </p>
 
-  <div>
+    <div>
+    </div>
+</div>
 
-  <br>
-  <br>
-  <br>
 
-  <div class="container" style="border: 1px solid black;">
-    <h1 class="jumbotron jumbotron-fluid" ><strong>Binding Syntax</strong></h1>
+<br>
+<br>
+<br>
+
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Binding Syntax</strong></h1>
 
     <p>-Data-Binding is a mechanism for coordinating what users see, specifically
         with application data values. While you could push values to and pull values
         from HTML, the application is easier to write, read and maintain if you turn These
-        tasks over to a binding framework. You simply declare bindings between binding 
-        sources, target HTML elements, and let the framework do the rest. 
+        tasks over to a binding framework. You simply declare bindings between binding
+        sources, target HTML elements, and let the framework do the rest.
 
-     
+
     </p>
 
-    <table>
+    <table class="table table-dark">
         <tr>
             <td>Type</td>
             <td>Syntax</td>
@@ -183,28 +186,28 @@
                 bind-target="expression"
             </td>
             <td>One-way <br>
-            from data <br>
-            source to view</td>
+                from data <br>
+                source to view</td>
         </tr>
         <tr>
             <td>Event</td>
             <td>(target)="statement" <br>
-            on-target="statement"</td>
+                on-target="statement"</td>
             <td>One-way <br>
-            from view target <br>
-            to data source.</td>
+                from view target <br>
+                to data source.</td>
         </tr>
         <tr>
             <td>Two-way</td>
             <td>[(target)]="expression" <br>
-            bindon-target="expression"</td>
+                bindon-target="expression"</td>
             <td>Two-way</td>
         </tr>
     </table>
 
     <p>
         Binding types other than interpolation have a target name to the left of
-        the equal sign, either surrounded by punctuation, [] or (), or preceded by a 
+        the equal sign, either surrounded by punctuation, [] or (), or preceded by a
         prefix: bind-, on-, bindon-,<br>
 
         <strong>The target of a binding is the property or event inside the binding <br>
@@ -220,7 +223,7 @@
 
         <br>
         <br>
-        
+
         -Notice that the binding is to the disabled property of the button's DOM element, <br>
         not the attribute. This applies to data-binding in general. Data-binding works with <br>
         properties of DOM elements, componenets and directives, not HTML attributes.<br>
@@ -235,7 +238,7 @@
 
         <strong>- Attributes are defined by HTML. Properties are accessed from DOM nodes.</strong> <br>
         <strong>- Properties are accessed from DOM (Document Object Model) nodes. </strong>
-    
+
     </p>
 
     <ul>
@@ -244,16 +247,19 @@
         <li>Some DOM properties don't have corresponding attributes; for example, textContent.</li>
     </ul>
 
-        <strong><h3>Template binding works with properties and events not attributes.</h3></strong>
+    <strong>
+        <h3>Template binding works with properties and events not attributes.</h3>
+    </strong>
 
 
     <h2>Example 1: an input></h2>
 
     <p>When the browser renders <input #htmlExample type="text" value="Sarah"> <br>
-       It creates a corresponding DOM node with a value property initialized to "Sarah"   
+        It creates a corresponding DOM node with a value property initialized to "Sarah"
     </p>
 
-    <strong>The HTML attribute value specifies the initial value; the DOM value property is the current value.</strong>
+    <strong>The HTML attribute value specifies the initial value; the DOM value property is the current
+        value.</strong>
     <br>
     <br>
 
@@ -266,30 +272,30 @@
     <br>
 
     <h2>Example 2: a disabled button</h2>
-    
-    <p>The disabled attribute is another example. A button's disabled property is 
+
+    <p>The disabled attribute is another example. A button's disabled property is
         false by default so the button is enabled.
     </p>
-    
+
     <br>
 
     <p>When you add the disabled attribute, its presence alone initializes the button's
-       disabled property to true so the button is disabled.
+        disabled property to true so the button is disabled.
     </p>
 
     <br>
 
     <p>Adding and removing the disabled attribute disables and enables the button.
-        However, the value of the attribute is irrelevant, which is why you cannot enable a 
-        button by writing  button disabled = "false" Still disabled /button
+        However, the value of the attribute is irrelevant, which is why you cannot enable a
+        button by writing button disabled = "false" Still disabled /button
     </p>
 
 
     <strong>
-    The target of a data-binding is something in the DOM. Depending on the binding 
-    type, the target can be a property (element, component, or directive), an event 
-    (element, component, or directive), or sometimes an attribute name. The following 
-    table summarizes the targets for the different binding types.
+        The target of a data-binding is something in the DOM. Depending on the binding
+        type, the target can be a property (element, component, or directive), an event
+        (element, component, or directive), or sometimes an attribute name. The following
+        table summarizes the targets for the different binding types.
     </strong>
 
     <br>
@@ -305,7 +311,7 @@
 
         <tr>
             <td>Property</td>
-            <td>Element property <br> 
+            <td>Element property <br>
                 Componenet property <br>
                 Directive property</td>
             <td>src, hero and ngClass in the following: <br>
@@ -319,7 +325,7 @@
                 Component event<br>
                 Directive event</td>
             <td>click deleteRequest, and myClick in the following: <br>
-            <img src="assets/EventBinding.png"></td>
+                <img src="assets/EventBinding.png"></td>
         </tr>
 
         <tr>
@@ -347,9 +353,17 @@
         </tr>
 
     </table>
+
+</div>
+
+<br>
+<br>
+
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Property Binding</strong></h1>
+    <p>Use property binding to set properties of target elements or directive <br>
+    @Input() decorators.</p>
     
-    
-    <div class="container" style="border: 1px solid black;">
-        <h1 class="jumbotron jumbotron-fluid" ><strong>Property Binding</strong></h1>
-    </div>
-  </div>
+    <h3>One-way In</h3>
+
+</div>
