@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Item } from './items';
 
 @Component({
   selector: 'app-angular-examples',
@@ -26,7 +27,52 @@ export class AngularExamplesComponent implements OnInit {
   * </my-component> with @ViewChild('cmp'))
   */
   @ViewChild('htmlExample',null) htmlExample;
+
+  //Property Binding expressions
+  itemImage = 'assets/GitHub-Mark.png';
+  randomColumnValue = 1;
+  isUnchanged = true;
+  classes="alert alert-success";
+
+  names = "Earphones";
+  maker = "Sony";
+  qty = 4;
+
+  itemList : Item[] = [
+    { id: 11, name: 'bottle' },
+    { id: 12, name: 'boombox' },
+    { id: 13, name: 'chair' },
+    { id: 14, name: 'fishbowl' },
+    { id: 15, name: 'lamp' },
+    { id: 16, name: 'tv' },
+    { id: 17, name: 'mug' },
+    { id: 18, name: 'paintbrush' },
+    { id: 19, name: 'plant' },
+    { id: 20, name: 'teapot' }
+  ];
+
+  evilTitle = 'Template <script> alert("Evil Script") </script> Syntax';
   
+
+  //Attribute class and style binding expressions
+  actionName = "Action Taken";
+  hasFoo = true;
+  fooClass = "foo";
+  color = "red";
+  border ="dotted";
+  
+  isSpecial = "specialClassExample";
+  classExpr = "notSpecialExample";
+  styleExpr = "background-color: red";
+
+
+  //Event binding expressions
+  clickMessage = "";
+  currentItem = {id: 1, name: "teapot"}
+
+
+  //Two-way data binding
+  fontSizePx = 10;
 
   constructor() { }
 
@@ -50,4 +96,8 @@ export class AngularExamplesComponent implements OnInit {
     alert(this.htmlExample.nativeElement.value);
   }
 
+
+  public onSave(event){
+    alert(event.type);
+  }
 }

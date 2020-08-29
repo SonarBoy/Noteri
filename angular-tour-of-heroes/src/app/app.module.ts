@@ -19,6 +19,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { ExamplesComponent } from './boot/examples/examples.component';
 import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.component';
 import { AngularExamplesComponent } from './angular-examples/angular-examples.component';
+import { ItemDetailComponent } from './angular-examples/item-detail/item-detail.component';
+import { ClickDirective } from './angular-examples/click.directives';
 
 
 
@@ -33,7 +35,9 @@ import { AngularExamplesComponent } from './angular-examples/angular-examples.co
     HeroSearchComponent,
     ExamplesComponent,
     TesseractTestComponent,
-    AngularExamplesComponent
+    AngularExamplesComponent,
+    ItemDetailComponent,
+    ClickDirective
   ],
   imports: [
     BrowserModule,

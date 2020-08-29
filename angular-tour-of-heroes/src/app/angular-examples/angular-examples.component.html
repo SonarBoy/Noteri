@@ -77,7 +77,7 @@
     <h1>Expression context</h1>
 
     <p>The expression context is typically the componenet instance. In the following
-        snippets, the recomended within double curly braces and the
+        snippets, the recomended variable is within double curly braces and the image location is within the item ImageUrl2
     </p>
 
     <h4>{{recommended}}</h4>
@@ -88,7 +88,7 @@
     <p>Altho its possible to write comple template expressions, its better to avoid it
 
         A property name or method call should be the norm, but an occasional Boolean negation, !, is
-        OK. Otherwise confine applicaton and business logic to the component, whereitis easier to develop and test.
+        OK. Otherwise confine application and business logic to the component, whereitis easier to develop and test.
     </p>
 
     <h4>No visible side effects</h4>
@@ -138,10 +138,11 @@
         method of the component. <br>
 
         <br>
+        <!--
         button (click)="onSave($event)">Save /button> <br>
         button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}} /button> <br>
         form #heroForm (ngSubmit)="onSubmit(heroForm)"> ... /form> <br>
-
+            -->
         <br>
         -Template context names take precedence over component context names. In deleteHero(hero)
         above, the hero is the template input variable, not the component's hero property.
@@ -365,5 +366,324 @@
     @Input() decorators.</p>
     
     <h3>One-way In</h3>
+    <p>Property binding flows a value in one direction, from a component's property to a target element <br>
+    component ---> target element
+    </p>
+
+    <p class="alert alert-danger">
+        You can't use property binding to read or pull values out of target elements. Similarly,
+        you cannot use property binding to call a method on the target elements. If the element 
+        raises events you can listen to them with an event binding.
+    </p>
+
+    <img [src]="itemImage">
+
+    <p>Here is an example of the colum span with the colums as a property binding</p>
+
+    <table class="table table-dark">
+        <tr>
+            <td [colSpan]="randomColumnValue"n class="table-light">Span 2 columns</td>
+            <td>Test</td>
+            <td>Test</td>
+        </tr>
+    </table>
+    <p>Here we have a disabled button with the disabled property bound:</p>
+    <button [disabled]="isUnchanged">Disabled Button</button>
+
+
+    <br>
+    
+    <p [ngClass]="classes">Element properties may be the more common targets, but Angular looks first <br>
+    to see if the name is a property of a known directive, as it is in the following example (This paragraph 
+    is green because of the special classes added).
+    </p>
+
+    <p>Technically, Angular is matching the name to a directive @Input(), one of the property names is listed in <br>
+       names listed in the directive's inputs array or a property decorated with @Input(). Such inputs map to 
+       the directive's own properties.
+    </p>
+
+    <h3>Avoid Side effects.</h3>
+
+    <br>
+
+    <p>Evaluation of a template expression should have no visible side effects. You can't assign a value to anything in a  <br>
+    property binding expression nor use the increment and decrement operators.
+    </p>
+
+    
+    <br>
+
+    <h3>Return the proper type</h3>
+
+    <p>The template expression should evaluate to the type of value that the target property expects. Return <br>
+        a string if the target property expects a string, a number if it expects a number an object if it expects an object <br>
+        and so on. 
+    </p>
+
+
+    <h1>Passing Strings </h1>
+    <p>Here we are passong the value "itemList" defined in our angular-examples.ts . It gets digested by the item-details component 
+        by passing it to the input value of "items" in the item-details.ts file.
+    </p>
+
+    <app-item-detail [firstItem]="names" [secondItem]="maker" [thirdItem]="qty" [items]="itemList" ></app-item-detail>
+
+    <br>
+
+    <h1>Remember the brackets</h1>
+
+    <p>The brackets tell Angular to evaluate the template expression. If you omit the brackets, Angular treats the string as a <br>
+        constant and initializes the target property with that string. 
+    </p>
+
+    <br>
+
+    <h1>One-Time string initialization.</h1>
+
+    <p>You should omit the brackets when all of the following are true:</p>
+    <ol>
+        <li><h1>The target property accepts a sting value.</h1></li>
+        <li><h1>The string is a fixed value that you can put directly into the template</h1></li>
+        <li><h1>This initial value never changes.</h1></li>
+    </ol>
+
+    <br>
+
+    <h1>Content Security</h1>
+
+    <p>Imagnine the following malicious content. <br>
+    
+    {{evilTitle}}
+    </p>
+
+    <br>
+
+    <p>In the above case, the HTML displays as is, and the Javascript does not execute. Angular does not allow HTML <br>
+    with script tags to leak into the browser neither with interpolcation nor property binding.
+    </p>
+
+</div>
+<br>
+
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Attribute, class and style Bindings</strong></h1>
+    <br>
+    <br>
+
+    <h1>Attribute Binding</h1>
+
+    <p>Set the value of an attribute directly with an attribute binding. This is the only exception to the rule that 
+        a binding sets a target property and the only binding that creates and sets an attribute.
+    </p>
+
+    <br>
+
+    <p>Attribute binding syntax resembles property binding but instead of an element property between brackets, starts
+        with the prefix attr, followed by a dot (.), and the name of the attribute. You then set the attribute value, using
+        an expression that resolves to a string, or remove the attribute when the expression resolves to null
+
+        <br>
+        Following button is an example
+    </p>
+
+    <button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+
+    <h1>Class Binding</h1>
+
+    <p>Here is how to set a class binding without a binding in plain HTML.
+    <br>
+    To create a single class binding start with the prefix class followed by a dot (.) and the name of the CSS class
+    (for example, class.foo =  "hasFoo"). Angular adds the class when the bound expression is truthy and removes the 
+    class when the expression is falsy
+
+    
+    </p>
+    <h1 [class.foo]="hasFoo">This is a test</h1>
+    <h1 [class]="fooClass">This is another test</h1>
+    
+    <img src="assets/ClassBindingChart.png">
+
+    <br>
+    <br>
+    <br>
+
+    <h1>Style Bindings</h1>
+
+    <p>Here's how to set the style arrtibute without a binding in plain HTML: </p>
+    <div style="color: blue">Some text</div>
+
+    <p>You can also set styles dynamically with a style binding.</p>
+
+    <br>
+
+    <p>To create a single style binding, start with the prefix style followed by a dot(.)<br>
+    and the name of the CSS style property (for example style.width= "width"). The property will 
+    be set to the value of the bound expression, which is normally a string. Optionally, you can add 
+    a unit extension like em or % which requires a number. 
+    </p>
+
+    <div [style.color]="color" [style.border]="border">THIS IS A TEST FOR THE STYLE BINDING</div>
+    
+    <br>
+
+    <img src="assets/StyleBindingChart.png">
+
+    <br>
+
+    <p>If there are multiple styles youd like to toggle you can bind to the [style] property directly
+        without the dot (for example, style="styleExpr"). The expression attached to the style binding 
+        is most often a string list of styles like "width: 100px;"
+    </p>
+
+    <br>
+    <br>
+
+    <h1>Styling Precedence</h1>
+
+    <img src="assets/StylingPrecedence.png">
+    <br>
+
+    <h2>The more specific a class or style binding is, the higher its precedence.</h2>
+
+    <p>A binding to a specific class (for example, [class.foo]) will take precedence over a generic class 
+        binding, and a binding to a specific style (for example, style.bar) will take precedence over a 
+        generic style binding. 
+    </p>
+
+    <div [class.special]="isSpecial" [class]="classExpr">Some Text</div>
+    
+    <p>In addition, bindings take precedence over static attributes.
+       In the following case, class and class with square brackets have similar specificty, but the
+       class with square brackets binding will take precedence because its dynamic.
+    </p>
+
+    <div class="notSpecialClassExample" [class]="isSpecial">This is another test</div>
+
+    <div style="background-color: blue" [style]="styleExpr">Some text.</div>
+
+
+</div>
+
+<br>
+
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Event Binding</strong></h1>
+    <br>
+
+    <p>Event binding allows you to listen for certain events such as keystrokes, mouse movements
+        clicks and touches. <br>
+
+        Angular event binding syntax consists of a target event name within parentheses on the left of 
+        an equal sign and a quoted template statement on the right. The following event binding listens for <br>
+        button's click events, calling the component's onSave() method whenever a click occurs.
+    </p>
+
+    <button (click)="onSave($event)">Save</button>
+
+    <br>
+
+    <p>Element events may be the more common targets but Angular looks first to see if the name matches <br>
+    an event property of a known directive, as it does in the following example</p>
+
+    <br>
+
+    <p>myClick is an event on the custom Click Directive:</p>
+    <button (myClick)="clickMessage=$event" clickable>Click with my button</button>
+    {{clickMessage}}
+
+    <button (myClick)="clickMessage=$event" clickable>click with myClick</button>
+    {{clickMessage}}
+
+    <p>Note Here the click.directives.ts must also be added to the declarations in the app.module.ts</p>
+
+    <br>
+
+    <h1>$event and event handling statements.</h1>
+
+    <p>In an event binding, Angular sets up an event handler for the target event. <br>
+        When the event is raised the handler executes the template statement. The template statement
+        typically involves a reciever which performs an action in response to the event such as 
+        storing a value from the html control into a model. <br>
+
+        The binding conveys information about the event. This information can include data values such as <br>
+        an event object, string or number named $event.
+
+    </p>
+
+    <input [value]="currentItem.name" (input)="currentItem.name=$event.target.value"><br>
+    <h3>{{currentItem.name}}</h3>
+
+    <p>This code sets the input value property by binding to the name property. To listen for changes to the <br>
+    value, the code binds to the input event of the input element. When the user makes changes, the input event is <br>
+    and the binding executes the statement within a context that includes the DOM event object $event.</p>
+
+    <br>
+
+    <h1>Custom events with EventEmitter</h1>
+
+    <p>Directives typically raise custom events with an Angular Event Emitter. The directives creates an EventEmitter and exposes <br>
+    it as a property. The directive calls EventEmitter.emit(payload) to fire an event, passing in a message payload, which can be anything<br>
+    Parent directives listen for the event by binding to this property and accessing the payload through the $event object
+    </p>
+
+    <br>
+
+    <app-item-detail [firstItem]="names" [secondItem]="maker" [thirdItem]="qty" [items]="itemList" [tester]="currentItem.name" ></app-item-detail>
+
+    <br>
+
+    <p>Consider an ItemDetailComponent that presents item information and responds to user actions. Although the ItemDetailComponent<br>
+    has a delete button, it doesn't know how to delete the hero. It can only raise an event reporting the user's delete request.</p>
+
+
+</div>
+
+<br>
+
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Event Binding</strong></h1>
+    <br>
+
+
+    <h1>Contents</h1>
+
+    <ul>
+        <li>Basic of Two-way binding</li>
+        <li>Two-way binding in forms</li>
+    </ul>
+
+    <p>Two-way binding gives your app a way to share data between a component class and its template <br>
+    
+    Angular offers a special two-way data binding syntax for this purpose. The banana box syntax combines the brackets of
+    property binding with the parentheses of event binding.
+
+    </p>
+
+    <ul>
+        <li>Sets a specific element property.</li>
+        <li>Listens for an element change event.</li>
+    </ul>
+
+    <br>
+
+    <p>The syntax is easy to demonstrate when the element has a settable property called x and a corresponding event named
+        xChange. Here's a SizerComponent that fits this pattern. It has a size value property and a companion sizeChange event.
+    </p>
+    
+    
+    <app-item-detail [size]="fontSizePx" ></app-item-detail>
+    <label>FontSize (px): <input [(ngModel)]="fontSizePx"></label>
+    <label>Input: <input [(ngModel)]="firstItem"></label>
+
+    <br>
+
+    <p>The initial size is an input value from a property binding. Clicking the buttons increases or decreases the size, within 
+        min/max value constraints and then raises or emits the sizeChange event with the adjusted size. 
+    </p>
+
+    <br>
+    
+    <app-item-detail [(size)]="fontSizePx" ></app-item-detail>
 
 </div>

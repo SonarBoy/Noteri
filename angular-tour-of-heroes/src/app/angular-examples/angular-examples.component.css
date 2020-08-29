@@ -1,3 +1,15 @@
 .section{
     border: 5px solid black;
 }
+
+.foo{
+    background-color: blueviolet;
+}
+
+.specialClassExample{
+    background-color: chocolate;
+}
+
+.notSpecialExample{
+    background-color: gray;
+}
