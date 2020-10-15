@@ -53,6 +53,10 @@
 
 }
 
+.body{
+    font-size: medium;
+}
+
 @media (min-width: 575.98px) { 
     .item{
         background-color: red;
@@ -159,4 +163,54 @@
         width: 40%;
         height: 40%;
     }    
+}
+
+.redBar50Percent{
+    background-color: red;
+    width: 50%;
+}
+
+.redBar50Points{
+    background-color: red;
+    width: 50px;
+}
+
+.redBar50VH{
+    background-color: blue;
+    height: 25vh;
+    width: 10vw;
+    color: white;
+}
+
+
+.redBar50VW{
+    background-color: blue;
+    height: 25vh;
+    width: 50vw;
+    color: white;
+}
+.card{
+    border-style: solid;
+    border-color: black;
+}
+
+
+.cardEM{
+    border-style: solid;
+    border-color: black;
+    font-size: xx-large;
+}
+
+.cardREM{
+    border-style: solid;
+    border-color: black;
+    font-size: xx-large;
+}
+
+.redBarREM{
+    font-size: 3rem;
+}
+
+.redBarEM{
+    font-size: 3em;
 }
