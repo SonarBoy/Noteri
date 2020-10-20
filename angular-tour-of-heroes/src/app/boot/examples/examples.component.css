@@ -198,7 +198,7 @@
 .cardEM{
     border-style: solid;
     border-color: black;
-    font-size: xx-large;
+    font-size: x-small;
 }
 
 .cardREM{
@@ -213,4 +213,20 @@
 
 .redBarEM{
     font-size: 3em;
+}
+
+.two-em{
+    font-size: 2em;
+}
+
+.two-rem{
+    font-size: 2rem;
+}
+
+.two-hundred-precent{
+    font-size: 200%;
+}
+
+.parent{
+    font-size: 30px;
 }
