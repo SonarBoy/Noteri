@@ -21,6 +21,10 @@ import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.com
 import { AngularExamplesComponent } from './angular-examples/angular-examples.component';
 import { ItemDetailComponent } from './angular-examples/item-detail/item-detail.component';
 import { ClickDirective } from './angular-examples/click.directives';
+import { ParentComponent } from './angular-examples/parent/parent.component';
+import { ChildComponent } from './angular-examples/child/child.component';
+import { ReactiveFormExampleComponent } from './angular-examples/reactive-form-example/reactive-form-example.component';
+import { TwoWayDataBindingExampleComponent } from './angular-examples/two-way-data-binding-example/two-way-data-binding-example.component';
 
 
 
@@ -37,7 +41,11 @@ import { ClickDirective } from './angular-examples/click.directives';
     TesseractTestComponent,
     AngularExamplesComponent,
     ItemDetailComponent,
-    ClickDirective
+    ClickDirective,
+    ParentComponent,
+    ChildComponent,
+    ReactiveFormExampleComponent,
+    TwoWayDataBindingExampleComponent
   ],
   imports: [
     BrowserModule,

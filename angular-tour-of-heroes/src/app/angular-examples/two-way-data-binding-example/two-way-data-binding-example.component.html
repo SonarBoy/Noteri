@@ -1,0 +1,18 @@
+<p>two-way-data-binding-example works!</p>
+
+<input #inputText>
+
+    <div>
+        <h1>This is the display</h1>
+        <textarea [(value)]="text"></textarea>
+    </div>
+
+<button (click)="simpleClick(inputText.value)">Send Value</button>
+
+<br>
+<br>
+<br>
+
+<button (click)="dec()" title="smaller">Decrease</button>
+<button (click)="inc()" title="larger">Increase</button><br>
+<label [style.font-size.px]="size">Font Size: {{size}}</label>

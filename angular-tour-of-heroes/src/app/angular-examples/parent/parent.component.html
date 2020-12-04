@@ -1,0 +1,9 @@
+<h1>Parent Component</h1>
+<app-child [item]="currentItem" (newItemEvent)="addItem($event)"></app-child>
+
+    <ul>
+        <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+
+<app-two-way-data-binding-example [(size)] = "fontSizePx" (sizeChange)="fontSizePx=$event" ></app-two-way-data-binding-example>
+<div [style.font-size.px]="fontSizePx">Resizable Text {{fontSizePx}}</div>

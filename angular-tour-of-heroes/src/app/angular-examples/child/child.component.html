@@ -1,0 +1,24 @@
+
+    <h1>This is the Child Component</h1>
+    Here we will send the input box's properties to the Parent component.
+    <input id="newItemButNot" type="text" #newItem><br>
+
+    <div #exampleDiv>
+        Inner Html Test from div for an example.
+    </div>
+
+    <ul>
+        <li><button (click)="addNewItem(newItem.size)">Send to Parent (Size).</button></li>
+        <li><button (click)="addNewItem(newItem.attributes)">Send to Parent (Attributes).</button></li>
+        <li><button (click)="addNewItem(newItem.value)">Send to Parent (Value).</button></li>
+        <li><button (click)="addNewItem(exampleDiv.innerHTML)">Send to Parent (INNER HTML).</button></li>
+        <li><button (click)="addNewItem(newItem.id)">Send to Parent (ID).</button></li>
+        <li><button (click)="addNewItem(newItem.color)">Send to Parent (COLOR).</button></li>
+        <li><button (click)="addNewItem(newItem.size)">Send to Parent.</button></li>
+        <li><button (click)="addNewItem(newItem.size)">Send to Parent.</button></li>
+
+
+        
+        
+    </ul>
+    <h3>Todays Item {{item}}</h3>
