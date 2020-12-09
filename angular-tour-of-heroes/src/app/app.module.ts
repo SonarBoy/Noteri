@@ -16,7 +16,6 @@ import{ HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
-import { ExamplesComponent } from './boot/examples/examples.component';
 import { TesseractTestComponent } from './boot/tesseract-test/tesseract-test.component';
 import { AngularExamplesComponent } from './angular-examples/angular-examples.component';
 import { ItemDetailComponent } from './angular-examples/item-detail/item-detail.component';
@@ -25,6 +24,8 @@ import { ParentComponent } from './angular-examples/parent/parent.component';
 import { ChildComponent } from './angular-examples/child/child.component';
 import { ReactiveFormExampleComponent } from './angular-examples/reactive-form-example/reactive-form-example.component';
 import { TwoWayDataBindingExampleComponent } from './angular-examples/two-way-data-binding-example/two-way-data-binding-example.component';
+import { HtmlExamplesComponent } from './boot/html-examples/html-examples.component';
+import { AngularBasicsComponent } from './angular-examples/angular-basics/angular-basics.component';
 
 
 
@@ -37,7 +38,6 @@ import { TwoWayDataBindingExampleComponent } from './angular-examples/two-way-da
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    ExamplesComponent,
     TesseractTestComponent,
     AngularExamplesComponent,
     ItemDetailComponent,
@@ -45,7 +45,9 @@ import { TwoWayDataBindingExampleComponent } from './angular-examples/two-way-da
     ParentComponent,
     ChildComponent,
     ReactiveFormExampleComponent,
-    TwoWayDataBindingExampleComponent
+    TwoWayDataBindingExampleComponent,
+    HtmlExamplesComponent,
+    AngularBasicsComponent
   ],
   imports: [
     BrowserModule,

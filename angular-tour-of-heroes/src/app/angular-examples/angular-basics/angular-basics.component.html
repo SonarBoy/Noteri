@@ -1,0 +1,170 @@
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+        <h1 class="display-4">TEMPLATE SYNTAX.</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+</div>
+
+<div class="container section">
+    <h1 class="jumbotron jumbotron-fluid"><strong>Interpolation</strong></h1>
+    <h4>Displaying Values with Interpolation</h4>
+    <p>Interpolation refers to embedding expressions into marked up text. By default, 
+    interpolation uses the double curly braces {{ and }} as delimiters.</p>
+
+    <p>The the typescript file associated with this component we have created and assinged a varible called
+        interpolationExample = "Basic Example";        
+    </p>
+
+    <h5 class="interpolationOutput">{{interpolationExample}}</h5>
+
+    <p>In the following example angular evaluates the title and itemImageUrl
+        properties to display some title text and an image.
+    </p>
+
+    <h5 class="interpolationOutput">{{title}}</h5>
+    <img class="interpolationOutput" src="{{imageLoc}}">
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h4>Template expressions</h4>
+
+    <p>A template expression produces a value and appears within 
+        double curly braces. Angular resolves the expression
+        and assigns it to a binding target. The target could be an HTML 
+        element a component or a directive. 
+    </p>
+
+    <p>More generally the text between the braces is a template expression
+        that Angular first evaluates and then converts to a string. 
+
+        The sum of 1 + 1 = {{1 + 1}}.
+
+        With interpolation, Angular performs the following tasks:
+    </p>
+
+    <ul>
+        <li>Evaluates all expressions in double curly braces.</li>
+        <li>Converts the expression results to strings.</li>
+        <li>Links the results to an adjacent literal strings.</li>
+        <li>Assigns the composite to an element or directive property.</li>
+    </ul>
+
+    <p>Template expressions are similar to JavaScript. Many JavaScript expressions are legal
+        template expressions, with the following exceptions.
+
+        You can't use JavaScript expressions that have or promote side effects, including: 
+    </p>
+    <ul>
+        <li>Assignments (=,+=,-=,...)</li>
+        <li>Operators such as new,typeof or instanceof</li>
+        <li>Chaining expressions with ; or ,</li>
+        <li>The increment and decrement operators ++ and --</li>
+        <li>Some of the ES2015+ operators</li>
+    </ul>
+    
+    <br>
+    <br>
+    <br>
+
+    <h4>Expression context</h4>
+
+    <p>
+       Interpolated expressions have a context - a particular part of the application
+       to which the expression belongs. Typically, this context is the component instance.
+    </p>
+
+
+    
+
+    <h5 class="interpolationOutput">{{recommended}}</h5>
+    <img class="interpolationOutput" [src]="imageLocTwo">
+
+    <br>
+    <br>
+    <br>
+
+
+    <ul>
+        <li *ngFor="let customer of customers">{{customer}}</li>
+    </ul>
+
+    <p>The context against which an expression evaluates is the union 
+        of the template variables the directive's context object 
+        if it has one and the component's members. If you reference a name
+        that belongs to more than one of these namespaces, Angular applies
+        the following logic to determine the context:
+    </p>
+
+    <ol>
+        <li>The template variable name.</li>
+        <li>A name in the directive's context.</li>
+        <li>The component's member names. </li>
+    </ol>
+
+    <div (keyup)="0">
+    <label>Type something:
+        <input #customerInput>{{customerInput.value}}
+    </label>
+    </div>
+
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        
+        <h1 class="display-4">ANGULAR PIPES.</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+</div>
+
+<div class="container">
+    <p>Use pipes to transform strings, currency amounts, dates, and
+        other data for display. Pipes are simple functions you can use in template 
+        expressions to accept an input value and return a transformed value. 
+
+        The types of pipes available are as follows:
+    </p>
+
+    <ol>
+        <li>DatePipe: Formats a date value according to locale rules. </li>
+        <li>UpperCasePipe: Transforms text to all upper case.</li>
+        <li>LowerCasePipe: Transforms text to all lower case.</li>
+        <li>CurrenyPipe: Transforms a number to a currency string, formatted according to
+            locale rules.
+        </li>
+        <li>DecimalPipe: Transforms a number into a string witha decimal point,
+            formatted according to 
+        </li>
+    </ol>
+
+
+    <h4>Date Pipe</h4>
+    <p>Date short <strong class="interpolationOutput">{{birthday | date:'short'}}</strong></p>
+    <p>Date long <strong class="interpolationOutput">{{birthday | date:'long'}}</strong></p>
+    <p>Date medium <strong class="interpolationOutput">{{birthday | date:'medium'}}</strong></p>
+
+
+    <h4>Lowercase Pipe</h4>
+    <p>Lower case <strong  class="interpolationOutput">{{lowerCaseWord | lowercase}}</strong></p>
+    <p>Lower case <strong  class="interpolationOutput">{{birthday | date:'short' |lowercase}}</strong></p>
+    
+
+    <h4>Uppercase Pipe</h4>
+    <p>Upper case <strong  class="interpolationOutput">{{lowerCaseWord | uppercase}}</strong></p>
+    <p>Upper case <strong  class="interpolationOutput">{{birthday | date:'short' |uppercase}}</strong></p>
+
+    <h4>Currency Pipe</h4>
+    <p>CAD: <strong class="interpolationOutput">{{currency| currency:'CAD'}}</strong></p>
+    <p>INR: <strong class="interpolationOutput">{{currency | currency:'INR':'symbol'}}</strong></p>
+
+    <p>If you want to customize the decimal points of currency value. You need to pass digitInfo parameter.
+    The syntax of the digitInfo parameter is “numberOfInteger:minimumFractions-maxFractions”.</p>
+
+    <p>USD: <strong class="interpolationOutput">{{currency | currency:'USD':'symbol':'5.2-2'}}</strong></p>
+    <p>JYP: <strong class="interpolationOutput">{{currency |currency:"JPY":"symbol"}}</strong></p>
+</div>
