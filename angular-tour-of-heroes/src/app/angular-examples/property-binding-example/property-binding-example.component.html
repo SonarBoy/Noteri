@@ -1,0 +1,109 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+        <h1 class="display-4">Property Binding</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Property Binding</h1>
+
+    <p>Property binding in Angular helps you set values for properties
+        of HTML elements or directives. With property binding, you can do things
+        such as toggle button functionality set paths programmatically and share
+        values between components. 
+    </p>
+
+    <br>
+
+    <p>Property binding moves a vlaue in one direction, from a component's 
+        property into a target element property. 
+    </p>
+
+    <h4>Binding to a property</h4>
+
+    <p>To bind to an element's property, enclose it in square brackets which
+        identifies the property as a target property. A target property is the
+        DOM property to which you want to assign a value. For example, the target
+        property in the following code is the immage element's src property.
+
+        Called itemImageURL.
+    </p>
+
+    <img [src]="itemImageURL">
+
+    <p>The brackets, [], cause Angular to evaluate the right-hand side of the assignment
+        as a dynamic expression. Without the brackets, Angular treats the right hand side as a string 
+        literal and sets the property to that static value. 
+    </p>
+
+    <h4>colspan and colSpan</h4>
+
+    <p>A common pront of confusion is between the attribute, colspan and the property, colSpan.
+        Notice that these two names differ by only a single letter.
+
+        Please look in the source of the page to find the commented out 
+        code that breaks the project.
+
+    </p>
+
+    <!-- <tr><td colspan="{{1 + 1}}">Three-Four</td></tr> -->
+
+    <tr><td [colSpan]="1 + 1">Three-Four</td></tr>
+
+    <h4>Disabled button example.</h4>
+    <button [disabled]="isUnchanged">This button is disabled.</button>
+    <br>
+    <br>
+
+    <h4>NG CLASS DIRECTIVE</h4>
+    <div [ngClass]="classes">
+        [ngClass] binding to the classes property making this blue
+        This is a test div.
+    </div>
+    <br>
+    <br>
+
+    <h4>Property binding and security</h4>
+    <p>Property binding can help keep content secure
+    
+        evilTitle = 'Template <script> alert("evil never sleeps")</script> Syntax';
+    </p>
+
+    <p>The browser doesn't process the HTML and instead displays it raw, as follows.</p>
+    <br>
+    <p><span>"{{evilTitle}}" is the interpolated evil title</span></p>
+    <br>
+    <p>Angular does not allow HTML with script tags neither with interpolation nor property 
+       binding, which prevents the JavaScript from running. 
+
+       In the following example however Angular sanitizes the values before displaying them.
+    </p>
+
+    <!--
+    Angular generates a warning for the following line as it sanitizes them
+    WARNING: sanitizing HTML stripped some content (see https://g.co/ng/security#xss).
+    -->
+    <p>"<span [innerHTML]="evilTitle"></span>" is the <i>property bound</i> evil title.</p>
+    <br>
+
+    <h4>Property binding and interpolation.</h4>
+    <p>Often interpolation and property binding can achieve the same results. The following 
+        binding pairs do the same thing.
+    </p>
+    <br>
+
+
+    <p><img src="{{itemImageURL}}"> is the <i>interpolated</i> image.</p>
+    <p><img [src]="itemImageURL"> is the <i>property bound</i> image.</p>
+
+    <p><span>"{{interpolationTitle}}" is the <i>interpolated</i> title.</span></p>
+    <p>"<span [innerHTML]="propertyTitle"></span>" is the <i>property bound</i> title.</p>
+
+    <p>You can use either form when rendering data values as strings, though 
+        interpolation is preferable for readability. However when setting an 
+        element property to a non-string data value, you must use property binding.
+    </p>
+
+</div>

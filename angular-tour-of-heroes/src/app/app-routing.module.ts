@@ -11,6 +11,9 @@ import { ChildComponent } from './angular-examples/child/child.component';
 import { TwoWayDataBindingExampleComponent } from './angular-examples/two-way-data-binding-example/two-way-data-binding-example.component';
 import { HtmlExamplesComponent } from './boot/html-examples/html-examples.component';
 import { AngularBasicsComponent } from './angular-examples/angular-basics/angular-basics.component';
+import { PropertyBindingExampleComponent } from './angular-examples/property-binding-example/property-binding-example.component';
+import { AttributeBindingExampleComponent } from './angular-examples/attribute-binding-example/attribute-binding-example.component';
+import { ReactiveFormExampleComponent } from './angular-examples/reactive-form-example/reactive-form-example.component';
 
 
 const routes: Routes = [
@@ -24,8 +27,10 @@ const routes: Routes = [
   {path: 'child', component: ChildComponent},
   {path: 'twoWayDataBinding', component:TwoWayDataBindingExampleComponent},
   {path: 'htmlExamples', component:HtmlExamplesComponent},
-  {path: 'angularBasics', component: AngularBasicsComponent}
-  
+  {path: 'angularBasics', component: AngularBasicsComponent},
+  {path: 'propertyBinding', component: PropertyBindingExampleComponent},
+  {path: 'attributeBinding', component: AttributeBindingExampleComponent},
+  {path: 'reactiveForms', component: ReactiveFormExampleComponent}
 ];
 
 

@@ -1,0 +1,21 @@
+.onSale{
+    background-color: red;
+    color: white;
+}
+
+.onSpecial{
+    background-color: blue;
+    color: white;
+}
+
+.foo{
+    border: 2px solid black;
+}
+
+.bar{
+    background-color: green;
+}
+
+.luk{
+    font-size: large;
+}

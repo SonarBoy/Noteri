@@ -1,1 +1,57 @@
-<p>reactive-form-example works!</p>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+        <h1 class="display-4">Forms</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+</div>
+
+<div class="container">
+    <h4>Common form foundation classes</h4>
+    <ul>
+        <li>Form Control: tracks the value and validation status of an individual form control.</li>
+        <li>Form Group: tracks the same values and status for a collection of form controls.</li>
+        <li>Form Array: tracks the same values and status for an array of form controls.</li>
+        <li>Control Value Accessor: creates a bridge between Angular Form Control instances and native DOM Elements.</li>
+    </ul>
+    
+
+    <h4>Data Flow in Forms</h4>
+
+    <p>When an application contains a form, Angular must keep the view in sync with the component
+        model and the component model in sync withthe view. As users change values and make selections
+        through the view, the new values must be reflected in the data model. Similarly when the program logic
+        changes values in the data model those values must be reflected in the view.
+    </p>
+
+    <p>In reactive forms each form element in the view is directly linked to the form model
+        (a FormControl instance). Updates from the view to the model and from the model to the view are synchronous
+        and do not depend on how the UI is rendered.
+
+        The view to model diagram shows how data flows when an input field's value is changed from the 
+        view through the following steps. 
+    </p>
+
+    <ol>
+        <li>The user types a value into the input element, in this case the favorite color Blue.</li>
+        <li>The form input element emits an "input event with the latest value."</li>
+        <li>The control value accessor listening for events on the form input element immediately relays the 
+            new value to the FormControl instance. 
+        </li>
+        <li>The FormControl instance emits the new value through the valueChanges observable.</li>
+        <li>Any subscribers to the valueChanges observable receive the new value.</li>
+    </ol>
+
+    <p>The model-to-view diagram shows how a programmatic change to the model is propagated to the model-to-view
+        through the following steps.
+    </p>
+
+    <ol>
+        <li>The user calls the favoriteColorControl.setValue() method, which updates the FormControl value.</li>
+        <li>The FormControl i</li>
+        <li></li>
+        <li></li>
+    </ol>
+
+
+</div>

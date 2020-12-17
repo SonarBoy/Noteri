@@ -26,6 +26,8 @@ import { ReactiveFormExampleComponent } from './angular-examples/reactive-form-e
 import { TwoWayDataBindingExampleComponent } from './angular-examples/two-way-data-binding-example/two-way-data-binding-example.component';
 import { HtmlExamplesComponent } from './boot/html-examples/html-examples.component';
 import { AngularBasicsComponent } from './angular-examples/angular-basics/angular-basics.component';
+import { PropertyBindingExampleComponent } from './angular-examples/property-binding-example/property-binding-example.component';
+import { AttributeBindingExampleComponent } from './angular-examples/attribute-binding-example/attribute-binding-example.component';
 
 
 
@@ -47,7 +49,9 @@ import { AngularBasicsComponent } from './angular-examples/angular-basics/angula
     ReactiveFormExampleComponent,
     TwoWayDataBindingExampleComponent,
     HtmlExamplesComponent,
-    AngularBasicsComponent
+    AngularBasicsComponent,
+    PropertyBindingExampleComponent,
+    AttributeBindingExampleComponent
   ],
   imports: [
     BrowserModule,

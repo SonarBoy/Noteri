@@ -1,0 +1,72 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+        <h1 class="display-4">Attribute, class and style Bindings</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <p>Attribute binding in Angular helps you set values for attributes directly. With attribute Bindings
+    you can improve accessibility, style your application dynamically and manage multiple CSS classes or styles
+    simultaneously. 
+    </p>
+
+    <br>
+
+    <p>For example, ARIA and SVG are purely attributes. Neither ARIA nor SVG correspond to element properties 
+    and don't set element properties. In these cases, you must use attribute binding because 
+    there are no corresponding property targets.</p>
+
+    <h4>Syntax</h4>
+
+    <p>Attribute binding syntax resembles property binding but instead of an element property between
+        brackets, you precede the name of the attribute with the prefix attr, followed by a dot. Then you set the
+        attribute value with an expression that resolves to a string.
+    </p>
+
+    <br>
+    <p>p [attr.attribute-you-are-targeting]="expression" /p</p>
+
+    <h4>Binding ARIA attributes</h4>
+
+    <p>One of the primary use cases for attribute binding is to set ARIA 
+        attributes as in this example:
+    </p>
+    <button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+    <br>
+
+    <h4>Binding to the class attribute.</h4>
+
+    <p>You can use class binding to add and remove CSS class names from an element's class
+        attribute.
+    </p>
+
+    <h4>Binding to a single CSS class</h4>
+    <p>To create a single class binding, use the prefix class followed by a dot and the name of the CSS
+        class - for example, [class.sale]="onSale".Angular adds the class when the bound expression, 
+        onSale is truthy, and it removes the class when the expression is falsy—with the exception 
+        of undefined. See styling delegation for more information.
+    </p>
+
+    <button (click) = "toggle()">Toggle Classes.</button>
+    <div [class.onSale]="onSale">This is the On Sale Div it will turn red when the value is true</div>
+    <div [class.onSpecial]="onSpecial">This is the On Special Div it will turn blue when the value is true</div>
+    <div [class]="list">This is the multipleStyleDiv it has multiple styles when the value is true</div>
+
+    <br>
+    <br>
+    <br>
+    
+    <h4>Binding to the style attribute</h4>
+
+    <p>To create a single style binding use the prefix style followed by a dot and the name of the CSS style property 
+        for example style.width="width". Angular sets the property to the value of the bound expression,
+        which is usually a string. Optionally, you can adda unit extension like em or %, which requires a number type.
+    </p>
+    
+    <button (click)="toggleStyles()">Toggle Styles</button>
+    <div class="onSale" [style.width]="width">This is a width binding</div>
+    <div [style]="expression">This is a expression binding</div>
+</div>
