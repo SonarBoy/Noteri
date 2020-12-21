@@ -48,10 +48,220 @@
 
     <ol>
         <li>The user calls the favoriteColorControl.setValue() method, which updates the FormControl value.</li>
-        <li>The FormControl i</li>
-        <li></li>
-        <li></li>
+        <li>The FormControl instance emots the new value throught the valueChanges observable.</li>
+        <li>Any subscribers to the valueChanges observable receive the new value.</li>
+        <li>The control value accessor on the form input element updates the element with the new value.</li>
     </ol>
 
+    <h4>Mutablility of the data model.</h4>
+
+    <p>Reactive forms keep the data model pure by providing it as an immutable data structure. Each time a 
+    change is triggered on the data model, the FormControl instance returns a new data model rather than updating
+    the existing data model. This gives you the ability to track unique changes to the data model through 
+    the controls observable. Change detection is more efficient because it only needs to update on unique changes.
+    Because data updates follow reactive patterns you can intergrate with observable operators to transform data.</p>
+
+    <h4>Form Validation.</h4>
+    
+    <p>Validation is an integral part of managing any set of forms. Whether youre checking for required fields or
+       quering an external API for an existing username, Angular provides a set of built-in validators as well as the ability 
+       to create custom validators. 
+
+       Reactive forms define custom validators as functions that receive a control to validate. 
+    </p>
+
+    <h4>Testing</h4>
+
+    Testing reactive forms
+
+    <p>Reactive forms provide a relatively easy testing strategy because they provide synchronous access to the form 
+        and data models, and they can be tested without rednering the UI. In these tests status and data are queried and 
+        manipulated throught the control without interacting withthe change detection cycle. 
+
+
+        The following tests use the favorite color components mentioned earlier to verify the data flows for view to model
+        and model to view for a reactive form.
+    </p>
+
+    View to Model data flow. 
+
+    <ol>
+        <li>Query the view for the form input element and create a custom input event for the test.</li>
+        <li>Set the new value for the input to RED and dispatch the input event on the form input element.</li>
+        <li>Assert that the components favoriteColorControl value matches the value form the input</li>
+    </ol>
+
+    Model to View data flow. 
+
+    <ol>
+        <li>Use the favoriteColorControl a FormControl instance to set the new value.</li>
+        <li>Query the view for the form input element.</li>
+        <li>Assert that the new value set on the control matches the value in the input.</li>
+    </ol>
+
+
+    <br>
+    <br>
+    <br>
+
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+        <h1 class="display-4">Reactive Form Live Examples</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <h4>Basic Form Control</h4>
+    <ol>
+        <li>Register the reactive forms module in your app. This module declares the reactive form directives that 
+            you need to use reactive forms. 
+        </li>
+        <li>Generate a new FormControl instance and save it in the component.</li>
+        <li>Register the FormControl in the template.</li>
+    </ol>
+
+
+    <p>
+       Name: {{name.value}}
+    </p>
+
+    <input type="text" [formControl]="name">
+
+    <br>
+    <br>
+    <br>
+
+    <h4>Grouping form controls.</h4>
+
+    <p>Forms typically contain several related controls. Reactive forms provide two ways of Grouping
+        multiple related controls into a single input form.
+    </p>
+
+    <p>A form group defines a form with a fixed set of controls that you can manage together.
+        Form group basics are discussed in this section. You can also nest form groups to create more
+        complex forms.
+    </p>
+
+    <p>A form array defines a dynamic form where you can add and remove controls at run time. You can also
+        nest form arrays to create more complex forms.
+    </p>
+
+    <form [formGroup]="profileForm" action="" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="firstName">
+        <br>
+        <input type="text" formControlName="lastName">
+
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+    </form>
+
+    <button (click)="formControlTest()">Form Control Test</button>
+
+    <p>
+        First Name: {{profileForm.get('firstName').value}}
+    </p>
+
+    <p>
+        Last Name: {{profileForm.get('lastName').value}}
+    </p>
+    
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h4>Creating nested form groups</h4>
+
+    <p>Form groups can accept both individual form control instances and other form group 
+       instances as children. This makes composing complex form models easier to maintain and logically
+       group together.
+    </p>
+
+    <p>When building complex forms, managing the different areas of information is easier in smaller 
+       sections. Using a nested form group instance allows you to break large forms groups into smaller
+       more manageable ones. 
+    </p>
+
+    <form [formGroup]="charaterForm" action="" (ngSubmit)="onSubmitAddress()">
+
+        <label>
+            First Name:
+        <input formControlName="firstName" type="text">
+        </label>
+
+        <br>
+
+        <label>
+            Last Name:
+        <input formControlName="lastName" type="text">
+        </label>
+
+        <div formGroupName="address">
+            <label>
+                Street:
+            <input formControlName="street" type="text">
+            </label>
+            <br>
+            <label>
+                City:
+            <input formControlName="city" type="text">
+            </label>
+            <br>
+            <label>
+                State:
+            <input formControlName="state" type="text">
+            </label>
+        </div>
+
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <h4>Using the FormBuilder service to generate controls</h4>
+
+    <p>Creating form control instances manually can become repetitive when dealing with 
+        multiple forms. The FormBuilder service provides convenient methods for generating controls. 
+    </p>
+
+
+    <ol>
+        <li>Import the FormBuilder class.</li>
+        <li>Inject the FormBuilder service.</li>
+        <li>Generate the form contents.</li>
+    </ol>
+
+
+    <form [formGroup]="makerForm" action="" (ngSubmit)="onSubmitBuilder()">
+        <input formControlName="firstName" type="text">
+        <input formControlName="lastName" type="text">
+        <div formGroupName="address">
+            <label>
+                State:
+            <input formControlName="state" type="text">
+            </label>
+
+            <label>
+                City:
+            <input formControlName="city" type="text">
+            </label>
+
+            <label>
+                Street:
+            <input formControlName="street" type="text">
+            </label>
+        </div>
+
+        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </form>
 
 </div>

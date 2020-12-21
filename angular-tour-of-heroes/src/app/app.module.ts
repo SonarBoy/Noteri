@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 //Forms module for inputting data
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 
 //Importing the heros component
@@ -60,7 +60,7 @@ import { AttributeBindingExampleComponent } from './angular-examples/attribute-b
     AppRoutingModule,
     //added HTTP CLIENT MODULE
     HttpClientModule,
-
+    ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation:false}
     )
