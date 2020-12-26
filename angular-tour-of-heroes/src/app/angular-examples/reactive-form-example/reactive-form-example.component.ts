@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-
+import { Validators } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 @Component({
   selector: 'app-reactive-form-example',
   templateUrl: './reactive-form-example.component.html',
@@ -31,13 +32,30 @@ export class ReactiveFormExampleComponent implements OnInit {
 
 
   makerForm = this.fb.group({
-    firstName: [''],
+    firstName: ['',Validators.required],
     lastName: [''],
     address: this.fb.group({
       street: [''],
       city: [''],
       state: ['']
     })
+  });
+
+  //* 
+  //* Use the FormBuilder.array() method to define the array, 
+  //* and the FormBuilder.control() method to populate the array with an initial control.
+   
+  dynamicProfileForm = this.fb.group({
+    firstName: ['',Validators.required],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: ['']
+    }),
+    otherFields: this.fb.array([
+       this.fb.control('')
+    ])
   });
 
   constructor(private fb: FormBuilder) {
@@ -69,4 +87,20 @@ export class ReactiveFormExampleComponent implements OnInit {
     this.profileForm.reset();
   }
 
+  public onSubmitDynamic(){
+    console.warn(this.dynamicProfileForm.value);
+    this.profileForm.reset();
+  }
+
+  get otherFields(){
+    /* * 
+     * Note: Because the returned control is of the type AbstractControl,
+     * you need to provide an explicit type to access the method syntax for the form array instance.
+     */
+    return this.dynamicProfileForm.get('otherFields') as FormArray;
+  }
+
+  addOtherFields(){
+    this.otherFields.push(this.fb.control(''));
+  }
 }

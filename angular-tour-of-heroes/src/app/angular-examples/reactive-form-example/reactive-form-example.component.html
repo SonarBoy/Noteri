@@ -242,7 +242,7 @@
 
 
     <form [formGroup]="makerForm" action="" (ngSubmit)="onSubmitBuilder()">
-        <input formControlName="firstName" type="text">
+        <input formControlName="firstName" type="text" >
         <input formControlName="lastName" type="text">
         <div formGroupName="address">
             <label>
@@ -261,7 +261,70 @@
             </label>
         </div>
 
-        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+        <button type="submit" [disabled]="!makerForm.valid">Submit</button>
     </form>
 
+
+    <p>
+        Form Status: {{ makerForm.status }}
+      </p>
+      
+      <br>
+      <br>
+      <br>
+      
+
+      <h4>Creating Dynamic Forms</h4>
+
+      <p>FormArray is an alternative to FormGroup for managing any number of unnamed controls.
+          As with form group instances, you can dynamically insert and remove controls from form 
+          array instance and the form array instance value and validation status is calculated from its
+          child controls. However you dont need to define a key for each control by name so this is a great 
+          option if you dont know the number of child values in advance.
+      </p>
+      
+      <ul>
+          <li>Import the FormArray class.</li>
+          <li>Define a FormArray Control.</li>
+          <li>Access the FormArray control with a getter method.</li>
+          <li>Display the Form array in a template.</li>
+      </ul>
+
+      <form [formGroup]="dynamicProfileForm" action="" (ngSubmit)="onSubmitDynamic()">
+        <input formControlName="firstName" type="text" >
+        <input formControlName="lastName" type="text">
+        <div formGroupName="address">
+            <label>
+                State:
+            <input formControlName="state" type="text">
+            </label>
+
+            <label>
+                City:
+            <input formControlName="city" type="text">
+            </label>
+
+            <label>
+                Street:
+            <input formControlName="street" type="text">
+            </label>
+        </div>
+
+        <!-- The outer most div must have the FormArray name in the formArrayName tag to work
+        and to reference the correct array of controls. -->
+        <div formArrayName="otherFields">
+
+            <h3>Aliases</h3> <button (click)="addOtherFields()">Add Alias</button>
+
+            <div *ngFor="let field of otherFields.controls; let i = index">
+                <label>
+                    Alias:
+                    <input type="text" [formControlName]="i">
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!dynamicProfileForm.valid">Submit</button>
+    </form>
+      
 </div>
