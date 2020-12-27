@@ -58,6 +58,12 @@ export class ReactiveFormExampleComponent implements OnInit {
     ])
   });
 
+  validationTestOne = this.fb.group({
+    name: ['',Validators.required],
+    email: ['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]]
+  });
+
+
   constructor(private fb: FormBuilder) {
     
 
@@ -79,18 +85,33 @@ export class ReactiveFormExampleComponent implements OnInit {
 
   public onSubmitAddress(){
     console.warn(this.charaterForm.value);
-    this.profileForm.reset();
+    this.charaterForm.reset();
   }
 
   public onSubmitBuilder(){
     console.warn(this.makerForm.value);
-    this.profileForm.reset();
+    this.makerForm.reset();
   }
 
   public onSubmitDynamic(){
     console.warn(this.dynamicProfileForm.value);
-    this.profileForm.reset();
+    this.dynamicProfileForm.reset();
   }
+
+
+  public onSubmitEmail(){
+    if(this.validationTestOne.invalid){
+      console.error("The Form was invalid");
+      this.validationTestOne.reset();
+    }else{
+      console.warn(this.validationTestOne.value);
+      this.validationTestOne.reset();
+    }
+
+    
+    
+  }
+
 
   get otherFields(){
     /* * 

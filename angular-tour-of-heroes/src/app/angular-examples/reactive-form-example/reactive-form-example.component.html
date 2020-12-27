@@ -242,30 +242,35 @@
 
 
     <form [formGroup]="makerForm" action="" (ngSubmit)="onSubmitBuilder()">
-        <input formControlName="firstName" type="text" >
+        <input formControlName="firstName" type="text">
+        <br>
         <input formControlName="lastName" type="text">
+        <br>
         <div formGroupName="address">
             <label>
                 State:
             <input formControlName="state" type="text">
             </label>
+            <br>
 
             <label>
                 City:
             <input formControlName="city" type="text">
             </label>
+            <br>
 
             <label>
                 Street:
             <input formControlName="street" type="text">
             </label>
+            <br>
         </div>
 
         <button type="submit" [disabled]="!makerForm.valid">Submit</button>
     </form>
 
 
-    <p>
+      <p>
         Form Status: {{ makerForm.status }}
       </p>
       
@@ -291,23 +296,28 @@
       </ul>
 
       <form [formGroup]="dynamicProfileForm" action="" (ngSubmit)="onSubmitDynamic()">
-        <input formControlName="firstName" type="text" >
+        <input formControlName="firstName" type="text">
+        <br>
         <input formControlName="lastName" type="text">
+        <br>
         <div formGroupName="address">
             <label>
                 State:
             <input formControlName="state" type="text">
             </label>
+            <br>
 
             <label>
                 City:
             <input formControlName="city" type="text">
             </label>
+            <br>
 
             <label>
                 Street:
             <input formControlName="street" type="text">
             </label>
+            <br>
         </div>
 
         <!-- The outer most div must have the FormArray name in the formArrayName tag to work
@@ -321,10 +331,64 @@
                     Alias:
                     <input type="text" [formControlName]="i">
                 </label>
+                <br>
             </div>
         </div>
+        <br>
 
         <button type="submit" [disabled]="!dynamicProfileForm.valid">Submit</button>
     </form>
       
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">ALL THE ANGULAR EXAMPLES IN ONE PLACE.</h1>
+        <h1 class="display-4">Reactive Form Validation</h1>
+        <p class="lead">These are the angular examples that you need to understand.</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <h4>Validating form input</h4>
+
+    <p>You can improve overall data quality by validating user input for accuracy and completeness
+    This page shows how to validate user input from the UI and display useful validation messages,
+    in both reactive and template-driven forms. 
+    </p>
+    <br>
+
+    <p>In a reactive form the source of truth is the component class. Instead of adding validators 
+        through attributes in the template, you add validator functions directly to the form control 
+        model in the component class. Angular then calls these functions whenever the value of the control
+        changes.
+    </p>
+
+    <h5>Validator functions</h5>
+
+    <ul>
+        <li><strong>Sync Validators</strong> Synchronous functions that take a control instance and immediately return
+        either a set of validation errors or null. You can pass these in as the second argument when you instantiate a 
+        Form control.</li>
+        <li><strong>Async Validators</strong> Async functions that take a control instance and return a Promise or observable
+        that later emits a set of validation errors or null. You can pass these in as the third argument when you instantiate a 
+        Form Control.</li>
+    </ul>
+
+    <form [formGroup]="validationTestOne" action="" (ngSubmit)="onSubmitEmail()">
+        <label>
+            Name:
+        <input formControlName="name" type="text">
+        </label>
+        <br>
+        <label>
+            Email:
+        <input formControlName="email" type="text">
+        </label>
+
+        <button type="submit" [disabled]="!validationTestOne.valid">Submit!</button>
+    </form>
+
+
 </div>
